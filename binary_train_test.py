@@ -2,7 +2,7 @@ import pandas as pd
 import time
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report
 
 train_data = pd.read_csv('binary_train.csv')
 val_data = pd.read_csv('binary_validation.csv')
@@ -48,9 +48,6 @@ print(f"Validation accuracy: {dt_val_accuracy:.4f}")
 print("\nValidation Classification Report:")
 print(classification_report(y_val, y_val_pred_dt))
 
-print("\nValidation Confusion Matrix:")
-print(confusion_matrix(y_val, y_val_pred_dt))
-
 best_rf_estimators = 300
 
 print("\n" + "-"*70)
@@ -78,9 +75,6 @@ print(f"Validation accuracy: {rf_val_accuracy:.4f}")
 
 print("\nValidation Classification Report:")
 print(classification_report(y_val, y_val_pred_rf))
-
-print("\nValidation Confusion Matrix:")
-print(confusion_matrix(y_val, y_val_pred_rf))
 
 print("\n" + "="*70)
 print("SUMMARY COMPARISON - BINARY CLASSIFICATION")

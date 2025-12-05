@@ -2,7 +2,7 @@ import pandas as pd
 import time
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report
 
 # read training and validation data
 train_data = pd.read_csv('multiclass_train.csv')
@@ -49,9 +49,6 @@ print(f"Validation accuracy: {dt_val_accuracy:.4f}")
 print("\nValidation Classification Report:")
 print(classification_report(y_val, y_val_pred_dt, target_names=['No Diabetes', 'Prediabetes', 'Diabetes']))
 
-print("\nValidation Confusion Matrix:")
-print(confusion_matrix(y_val, y_val_pred_dt))
-
 # Random Forest with best hyperparameter (n_estimators=300)
 print("\n" + "-"*70)
 print("RANDOM FOREST (n_estimators=300)")
@@ -78,9 +75,6 @@ print(f"Validation accuracy: {rf_val_accuracy:.4f}")
 
 print("\nValidation Classification Report:")
 print(classification_report(y_val, y_val_pred_rf, target_names=['No Diabetes', 'Prediabetes', 'Diabetes']))
-
-print("\nValidation Confusion Matrix:")
-print(confusion_matrix(y_val, y_val_pred_rf))
 
 print("\n" + "="*70)
 print("Summary Comparisons")
